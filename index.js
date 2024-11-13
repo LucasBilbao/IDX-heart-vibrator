@@ -44,7 +44,7 @@ starter.addEventListener('click', () => {
     setTimeout(() => {
       navigator.vibrate(heartBeatPattern);
     }, prevTotalTime);
-    prevTotalTime += heartBeatPattern.reduce((prev, curr) => prev + curr);
+    prevTotalTime += heartBeatPattern.reduce((prev, curr) => prev + curr) + 100;
 
     prevIndex += INCREMENT_INDEX;
     nextIndex += INCREMENT_INDEX;
