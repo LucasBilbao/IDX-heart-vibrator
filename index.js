@@ -32,10 +32,9 @@ starter.addEventListener('click', () => {
   isVibrating = true;
 
   let prevTotalTime = 0;
-  let heartBeatPattern;
 
   while (!isOver) {
-    heartBeatPattern = setUpPattern(heartInfo.slice(prevIndex, nextIndex));
+    const heartBeatPattern = setUpPattern(heartInfo.slice(prevIndex, nextIndex));
 
     if (nextIndex >= heartInfo.length) {
       isOver = true;
@@ -44,7 +43,7 @@ starter.addEventListener('click', () => {
     setTimeout(() => {
       navigator.vibrate(heartBeatPattern);
     }, prevTotalTime);
-    prevTotalTime += heartBeatPattern.reduce((prev, curr) => prev + curr) + 100;
+    prevTotalTime += heartBeatPattern.reduce((prev, curr) => prev + curr);
 
     prevIndex += INCREMENT_INDEX;
     nextIndex += INCREMENT_INDEX;
