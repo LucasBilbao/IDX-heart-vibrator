@@ -12,7 +12,7 @@ function setUpPattern(data) {
   return newHeartBeatPattern;
 }
 
-fetch('./data.json')
+fetch('./phase_1.json')
   .then((res) => res.json())
   .then((data) => (heartInfo = data))
   .catch(() => console.log('Something went wrong!!!'));
